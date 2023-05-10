@@ -1,0 +1,43 @@
+{
+  "manifest_version": "1.0",
+  "version": "1.0",
+  "name": "Фотонейроредактор",
+  "theme_color": "#21004b",
+  "background_color": "#2cceff",
+
+  "short_name": "Фотонейроредактор",
+  "description": "Нейросетевой редактор для обработки изображения с камеры в реальном времени",
+  "categories": ["нейросеть", "редактор", "графика"],
+  "lang": "ru-Ru",
+  "scope": "/neuro-editor/",
+  "start_url": "/neuro-editor/index.html",
+  "id": "/neuro-editor/index.html",
+
+  "display": "standalone",
+  "dir": "auto",
+  "orientation": "any",
+
+  "icons": [
+    {
+      "src": "images/favicon128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "images/favicon-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
