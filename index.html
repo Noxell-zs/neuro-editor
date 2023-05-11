@@ -97,6 +97,35 @@
             <input id="nose_image" type="file" accept="image/*" aria-label="Изображение для эффекта носа">
             <button id="reset_nose_image">Сбросить изображение</button>
         </fieldset>
+
+        <fieldset class="controls">
+            <legend>Разрешение</legend>
+            <div class="controls-field">
+                <label for="video_width_field">Ширина</label>
+                <input
+                        id="video_width_field"
+                        class="text-field"
+                        type="number"
+                        min="1"
+                        max="3000"
+                        value="800"
+                        required
+                />
+            </div>
+            <div class="controls-field">
+                <label for="video_height_field">Высота</label>
+                <input
+                        id="video_height_field"
+                        class="text-field"
+                        type="number"
+                        min="1"
+                        max="3000"
+                        value="800"
+                        required
+                />
+            </div>
+            <button id="set_res">Применить</button>
+        </fieldset>
     </main>
     <footer>
         <a href="https://github.com/Noxell-zs/neuro-editor" class="link" title="Github" aria-label="Github">

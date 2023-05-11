@@ -29,7 +29,7 @@ document.getElementById('mark_opacity').addEventListener('input', (event) => {
 
 const videoElement = document.getElementById('input_video');
 const canvasElement = document.getElementById('output_canvas');
-const canvasCtx = canvasElement.getContext('2d');
+let canvasCtx = canvasElement.getContext('2d');
 
 function onResultsSeg(results) {
     canvasCtx.save();
@@ -118,14 +118,18 @@ faceMesh.setOptions({
 });
 faceMesh.onResults(onResultsMesh);
 
-const camera = new Camera(videoElement, {
-    onFrame: async () => {
-        await selfieSegmentation.send({image: videoElement});
-        await faceMesh.send({image: videoElement});
-    },
-    width: 800,
-    height: 800
-});
+function getCamera(width, height) {
+    return new Camera(videoElement, {
+        onFrame: async () => {
+            await selfieSegmentation.send({image: videoElement});
+            await faceMesh.send({image: videoElement});
+        },
+        width: width,
+        height: height
+    });
+}
+
+let camera = getCamera(800, 800);
 camera.start();
 
 const downloadImage = document.getElementById('download_image');
@@ -185,4 +189,20 @@ document.getElementById('reset_eye_image').addEventListener(
     'click', () => {
         eyeImage = null;
         eyeImageField.value = null;
+    });
+
+const videoWidthField = document.getElementById('video_width_field');
+const videoHeightField = document.getElementById('video_height_field');
+
+document.getElementById('set_res').addEventListener(
+    'click', () => {
+        const width = +videoWidthField.value, height = +videoHeightField.value;
+        if (videoHeightField.validity.valid && videoWidthField.validity.valid) {
+            camera?.stop();
+            canvasElement.width = width;
+            canvasElement.height = height;
+            canvasCtx = canvasElement.getContext('2d');
+            camera = getCamera(width, height);
+            camera.start();
+        }
     });
