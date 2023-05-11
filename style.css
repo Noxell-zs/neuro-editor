@@ -3,6 +3,7 @@
     --color-1: #2cceff;
     --color-2: #ffa9b8;
 
+    min-height: 100vh;
     background: linear-gradient(to top right, var(--color-1), var(--color-2));
     color: var(--main-color);
     font-weight: 550;
@@ -76,9 +77,16 @@ fieldset {
     gap: 0.5rem;
 }
 
+noscript {
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 1px var(--color-2);
+}
+
 footer {
     display: flex;
     justify-content: end;
+    align-items: center;
 }
 .link {
     color: var(--main-color);

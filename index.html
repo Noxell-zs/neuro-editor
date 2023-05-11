@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" type="image/png" href="images/favicon128.png">
     <link rel="apple-touch-icon-precomposed" type="image/png" href="images/favicon128.png">
     <link rel="mask-icon" type="image/svg+xml" href="images/favicon.svg" color="#21004b">
+    <link rel="apple-touch-startup-image" href="images/favicon-maskable.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Нейроредактор фото">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -38,7 +39,7 @@
     <link rel="canonical" href="https://noxell-zs.github.io/neuro-editor/">
     <meta property="og:title" content="Фотонейроредактор">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://noxell-zs.github.io/neuro-editor/images/favicon128.png">
+    <meta property="og:image" content="https://noxell-zs.github.io/neuro-editor/images/favicon-maskable.png">
     <meta property="og:url" content="https://noxell-zs.github.io/neuro-editor/">
     <meta property="og:description" content="Нейросетевой редактор для обработки изображения с камеры в реальном времени">
     <meta property="og:locale" content="ru_RU">
@@ -50,7 +51,7 @@
             "name": "Фотонейроредактор",
             "url": "https://noxell-zs.github.io/neuro-editor/",
             "description": "Нейросетевой редактор для обработки изображения с камеры в реальном времени",
-            "image": "https://noxell-zs.github.io/neuro-editor/images/favicon128.png"
+            "image": "https://noxell-zs.github.io/neuro-editor/images/favicon-maskable.png"
         }
     </script>
 </head>
@@ -61,6 +62,10 @@
         <canvas width="800px" height="800px" id="output_canvas"
                 title="Нажмите для сохранения"></canvas>
         <a id="download_image" download href="#"></a>
+
+        <noscript>
+            У вас отключен JavaScript. Сайт может работать некорректно.
+        </noscript>
 
         <fieldset class="controls">
             <legend>Настройки подсветки</legend>
