@@ -36,13 +36,16 @@ self.addEventListener('install', (event) =>
 );
 
 self.addEventListener('fetch', (event) => {
+    if (event.request.url.includes('yandex')) {
+        return event.respondWith(fetch(event.request).catch(e => undefined));
+    }
 
     event.respondWith(fetch(event.request).then((response) => {
         if (response.ok) {
             event.waitUntil(caches.open(CACHE).then((cache) =>
                 cache.put(event.request, response)
             ));
-            return response.clone()
+            return response.clone();
         } else {
             return fromCache(event.request);
         }
@@ -51,9 +54,5 @@ self.addEventListener('fetch', (event) => {
 });
 
 function fromCache(request) {
-    return caches.open(CACHE).then((cache) =>
-        cache.match(request).then((matching) =>
-            matching // || Promise.reject('no-match')
-        )
-    );
+    return caches.open(CACHE).then((cache) => cache.match(request));
 }
