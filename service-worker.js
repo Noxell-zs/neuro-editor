@@ -36,22 +36,24 @@ self.addEventListener('install', (event) =>
 );
 
 self.addEventListener('fetch', (event) => {
-    event.respondWith(fromCache(event.request));
-    event.waitUntil(update(event.request));
+
+    event.respondWith(fetch(event.request).then((response) => {
+        if (response.ok) {
+            event.waitUntil(caches.open(CACHE).then((cache) =>
+                cache.put(event.request, response)
+            ));
+            return response.clone()
+        } else {
+            return fromCache(event.request);
+        }
+    }).catch(e => fromCache(event.request) ));
+
 });
 
 function fromCache(request) {
     return caches.open(CACHE).then((cache) =>
         cache.match(request).then((matching) =>
-            matching || Promise.reject('no-match')
-        ));
-}
-
-function update(request) {
-   return caches.open(CACHE).then((cache) =>
-       fetch(request).then((response) =>
-           cache.put(request, response)
-       )
-   );
-
+            matching // || Promise.reject('no-match')
+        )
+    );
 }
