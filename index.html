@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Фотонейроредактор</title>
 
-    <meta name="keywords" content="нейросеть, редактор, графика">
-    <meta name="description" content="Нейросетевой редактор для обработки изображения с камеры в реальном времени">
+    <!-- <meta name="keywords" content="нейросеть, редактор, графика"> -->
+    <!-- <meta name="description" content="Нейросетевой редактор для обработки изображения с камеры в реальном времени"> -->
     <meta name="robots" content="none">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="title" content="Фотонейроредактор">
@@ -41,16 +41,17 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://noxell-zs.github.io/neuro-editor/images/favicon-maskable.png">
     <meta property="og:url" content="https://noxell-zs.github.io/neuro-editor/">
-    <meta property="og:description" content="Нейросетевой редактор для обработки изображения с камеры в реальном времени">
+    <!-- <meta property="og:description" content="Нейросетевой редактор для обработки изображения с камеры в реальном времени"> -->
     <meta property="og:locale" content="ru_RU">
     <meta property="og:site_name" content="Фотонейроредактор">
+
+    <!-- "description": "Нейросетевой редактор для обработки изображения с камеры в реальном времени", -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org/",
             "@type": "WebSite",
             "name": "Фотонейроредактор",
             "url": "https://noxell-zs.github.io/neuro-editor/",
-            "description": "Нейросетевой редактор для обработки изображения с камеры в реальном времени",
             "image": "https://noxell-zs.github.io/neuro-editor/images/favicon-maskable.png"
         }
     </script>
@@ -64,7 +65,7 @@
         <a id="download_image" download href="#"></a>
 
         <noscript>
-            У вас отключен JavaScript. Сайт может работать некорректно.
+            У вас отключен JavaScript. Сайт не будет работать корректно.
         </noscript>
 
         <fieldset class="controls">
@@ -88,12 +89,12 @@
         </fieldset>
 
         <fieldset class="controls">
-            <legend>Эффект глаз</legend>
+            <legend>Маска для глаз</legend>
             <input id="eye_image" type="file" accept="image/*" aria-label="Изображение для эффекта глаз">
             <button id="reset_eye_image">Сбросить изображение</button>
         </fieldset>
         <fieldset class="controls">
-            <legend>Эффект носа</legend>
+            <legend>Маска для носа</legend>
             <input id="nose_image" type="file" accept="image/*" aria-label="Изображение для эффекта носа">
             <button id="reset_nose_image">Сбросить изображение</button>
         </fieldset>
