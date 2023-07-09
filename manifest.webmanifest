@@ -6,7 +6,7 @@
   "background_color": "#2cceff",
 
   "short_name": "Фотонейроредактор",
-  "description": "Нейросетевой редактор для обработки изображения с камеры в реальном времени",
+  "description": "Наложение масок",
   "categories": ["нейросеть", "редактор", "графика"],
   "lang": "ru-Ru",
   "scope": "/neuro-editor/",
